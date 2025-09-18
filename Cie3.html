@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Welcome to My Homepage</title>
+  <link id="pagestyle" rel="stylesheet" href="style1.css">
+  <script>
+    function changeStyle(sheetName, button) {
+      document.getElementById('pagestyle').setAttribute('href', sheetName);
+
+      // Update button states
+      const buttons = document.querySelectorAll('nav button');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      button.classList.add('active');
+    }
+  </script>
+</head>
+<body>
+
+  <header>
+    <h1>Welcome to My Homepage</h1>
+    <p>Use the menu to select different Stylesheets</p>
+  </header>
+
+  <div class="container">
+    <nav>
+      <button class="active" onclick="changeStyle('style1.css', this)">Stylesheet 1</button>
+      <button onclick="changeStyle('style2.css', this)">Stylesheet 2</button>
+      <button onclick="changeStyle('style3.css', this)">Stylesheet 3</button>
+      <button onclick="changeStyle('style4.css', this)">Stylesheet 4</button>
+      <button onclick="changeStyle('no-style.css', this)">No Stylesheet</button>
+    </nav>
+
+    <main>
+      <h2>Same Page Different Stylesheets</h2>
+      <p>
+        This is a demonstration of how different stylesheets can change the layout of your HTML page.
+        You can change the layout of this page by selecting different stylesheets in the menu,
+        or by selecting one of the following links:
+        <a href="#" onclick="changeStyle('style1.css', this)">Stylesheet1</a>, 
+        <a href="#" onclick="changeStyle('style2.css', this)">Stylesheet2</a>, 
+        <a href="#" onclick="changeStyle('style3.css', this)">Stylesheet3</a>, 
+        <a href="#" onclick="changeStyle('style4.css', this)">Stylesheet4</a>.
+      </p>
+
+      <h3>No Styles</h3>
+      <p>
+        This page uses DIV elements to group different sections of the HTML page. 
+        Click here to see how the page looks like with no stylesheet: 
+        <a href="#" onclick="changeStyle('no-style.css', this)">No Stylesheet</a>.
+      </p>
+    </main>
+
+    <aside>
+      <h4>Side-Bar</h4>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+    </aside>
+  </div>
+
+</body>
+</html>
